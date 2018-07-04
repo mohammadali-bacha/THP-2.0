@@ -1,5 +1,9 @@
 {
-  "devDependencies": {
+  "scripts": {
+    "precommit": "rubocop && annotate",
+    "prepush": "rubocop && annotate && rspec --format doc"
+  },
+  "dependencies": {
     "husky": "^0.14.3"
   }
 }
