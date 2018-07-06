@@ -1,20 +1,8 @@
-# inherit_from: .rubocop_todo.yml
-# AllCops:
-#   Include:
-#     - Rakefile
-#     - config.ru
-#     - lib/**/*.rake
-#   Exclude:
-#     - db/schema.rb
-# inherit_from:
-# - https://relaxed.ruby.style/rubocop.yml
-# inherit_gem:
-#   relaxed-rubocop: .rubocop.yml
-
 inherit_from:
   - http://relaxed.ruby.style/rubocop.yml
 
 AllCops:
+  TargetRubyVersion: 2.5.1
   DisplayStyleGuide: true
   DisplayCopNames: true
   Exclude:
