@@ -11,7 +11,7 @@
 
 FactoryBot.define do
   factory :lesson do
-    title { Faker::Book.author }
-    description { Faker::Bitcoin.address }
+    title { Faker::Book.author.first(50) }
+    description { Faker::Bitcoin.address.first(300) }
   end
 end
