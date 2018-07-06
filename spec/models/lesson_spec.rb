@@ -12,14 +12,13 @@
 require 'rails_helper'
 
 RSpec.describe Lesson, type: :model do
-+  it 'is create_table' do
-+    lesson = create(:lesson)
-+    first_lesson = Lesson.first
-+    expect(first_lesson.title).to eq(lesson.title)
-+    expect(first_lesson.description).to eq(lesson.description)
-end
-  it { should validate_presence_of(:title) }
-  it { should validate_length_of(:title) }.is_at_most(50) }
-  it { should validate_length_of(:description) }.is_at_most(300) }
+  it "is creatable" do
+    lesson = create(:lesson)
+    expect(lesson.title).not_to be_blank
+    expect(lesson.description).not_to be_blank
+  end
 
+  it { is_expected.to validate_presence_of(:title) }
+  it { is_expected.to validate_length_of(:title).is_at_most(50) }
+  it { is_expected.to validate_length_of(:description).is_at_most(300) }
 end
